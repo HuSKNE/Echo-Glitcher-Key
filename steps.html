@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get a Free Key | ECHO GLITCHER</title>
+
+    <style>
+        :root {
+            --bg: #050608;
+            --card: rgba(13, 15, 19, 0.92);
+            --card-2: rgba(18, 21, 26, 0.88);
+            --white: #f5f7fa;
+            --text: #a8afb9;
+            --muted: #68717d;
+            --line: rgba(255,255,255,0.08);
+            --blue: #55aaff;
+            --blue-light: #8dccff;
+            --blue-dark: #2479c5;
+            --warning: #f0c45b;
+            --warning-bg: rgba(240,196,91,0.055);
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at 50% -10%, rgba(63,137,210,0.14), transparent 38%),
+                radial-gradient(circle at 0% 100%, rgba(39,92,145,0.08), transparent 35%),
+                var(--bg);
+            color: var(--white);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 28px 16px;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* =========================
+           SNOW / PARTICLE BACKGROUND
+        ========================== */
+
+        .snow-layer {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .snow {
+            position: absolute;
+            top: -20px;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.8);
+            filter: blur(0.2px);
+            box-shadow: 0 0 7px rgba(150,210,255,0.45);
+            animation: snowfall linear infinite;
+        }
+
+        .snow:nth-child(1)  { left: 4%;  animation-duration: 9s;  animation-delay: -2s;  opacity: .55; }
+        .snow:nth-child(2)  { left: 9%;  animation-duration: 13s; animation-delay: -7s;  opacity: .35; width: 3px; height: 3px; }
+        .snow:nth-child(3)  { left: 15%; animation-duration: 10s; animation-delay: -4s;  opacity: .75; }
+        .snow:nth-child(4)  { left: 22%; animation-duration: 15s; animation-delay: -11s; opacity: .4; width: 3px; height: 3px; }
+        .snow:nth-child(5)  { left: 29%; animation-duration: 11s; animation-delay: -5s;  opacity: .65; }
+        .snow:nth-child(6)  { left: 36%; animation-duration: 17s; animation-delay: -12s; opacity: .3; width: 5px; height: 5px; }
+        .snow:nth-child(7)  { left: 43%; animation-duration: 12s; animation-delay: -3s;  opacity: .55; }
+        .snow:nth-child(8)  { left: 50%; animation-duration: 14s; animation-delay: -9s;  opacity: .4; width: 3px; height: 3px; }
+        .snow:nth-child(9)  { left: 57%; animation-duration: 10s; animation-delay: -6s;  opacity: .7; }
+        .snow:nth-child(10) { left: 64%; animation-duration: 16s; animation-delay: -14s; opacity: .35; width: 5px; height: 5px; }
+        .snow:nth-child(11) { left: 71%; animation-duration: 12s; animation-delay: -4s;  opacity: .6; }
+        .snow:nth-child(12) { left: 78%; animation-duration: 18s; animation-delay: -10s; opacity: .3; width: 3px; height: 3px; }
+        .snow:nth-child(13) { left: 84%; animation-duration: 11s; animation-delay: -7s;  opacity: .7; }
+        .snow:nth-child(14) { left: 90%; animation-duration: 15s; animation-delay: -2s;  opacity: .45; }
+        .snow:nth-child(15) { left: 96%; animation-duration: 13s; animation-delay: -8s;  opacity: .6; }
+
+        @keyframes snowfall {
+            0% {
+                transform: translate3d(0, -30px, 0);
+            }
+
+            25% {
+                transform: translate3d(18px, 27vh, 0);
+            }
+
+            50% {
+                transform: translate3d(-16px, 54vh, 0);
+            }
+
+            75% {
+                transform: translate3d(20px, 78vh, 0);
+            }
+
+            100% {
+                transform: translate3d(-10px, 110vh, 0);
+            }
+        }
+
+        /* =========================
+           MAIN
+        ========================== */
+
+        .container {
+            width: 100%;
+            max-width: 440px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* =========================
+           TOP BRAND
+        ========================== */
+
+        .brand {
+            text-align: center;
+            margin-bottom: 26px;
+        }
+
+        .logo-frame {
+            width: 86px;
+            height: 86px;
+            margin: 0 auto 17px;
+            padding: 4px;
+            position: relative;
+            border-radius: 22px;
+            background: linear-gradient(
+                145deg,
+                rgba(255,255,255,0.16),
+                rgba(85,170,255,0.12),
+                rgba(255,255,255,0.04)
+            );
+            border: 1px solid rgba(255,255,255,0.12);
+            box-shadow:
+                0 15px 45px rgba(0,0,0,0.45),
+                0 0 30px rgba(65,145,220,0.08);
+        }
+
+        .logo-frame::before {
+            content: "";
+            position: absolute;
+            inset: -5px;
+            border-radius: 26px;
+            border: 1px solid rgba(85,170,255,0.08);
+            animation: logoPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes logoPulse {
+            0%, 100% {
+                opacity: .35;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: .9;
+                transform: scale(1.04);
+            }
+        }
+
+        .logo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 18px;
+        }
+
+        .brand-name {
+            margin: 0;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            color: var(--blue-light);
+            text-transform: uppercase;
+        }
+
+        .brand-line {
+            width: 42px;
+            height: 2px;
+            margin: 11px auto 0;
+            background: var(--blue);
+            border-radius: 5px;
+            box-shadow: 0 0 12px rgba(85,170,255,0.55);
+        }
+
+        /* =========================
+           HEADER
+        ========================== */
+
+        .heading {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 34px;
+            line-height: 1.05;
+            font-weight: 800;
+            letter-spacing: -1.2px;
+        }
+
+        .subtitle {
+            margin: 10px auto 0;
+            max-width: 330px;
+            color: var(--text);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* =========================
+           PROGRESS
+        ========================== */
+
+        .progress-box {
+            margin-bottom: 15px;
+            padding: 14px 16px;
+            border: 1px solid var(--line);
+            background: rgba(10,12,15,0.72);
+            border-radius: 14px;
+            backdrop-filter: blur(12px);
+        }
+
+        .progress-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 11px;
+        }
+
+        .progress-label {
+            color: #d9dee5;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .progress-count {
+            color: var(--blue-light);
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .progress-track {
+            width: 100%;
+            height: 4px;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.07);
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, var(--blue-dark), var(--blue-light));
+            box-shadow: 0 0 12px rgba(85,170,255,0.45);
+            border-radius: inherit;
+        }
+
+        /* =========================
+           MAIN CARD
+        ========================== */
+
+        .card {
+            position: relative;
+            overflow: hidden;
+            padding: 24px;
+            border-radius: 20px;
+            border: 1px solid var(--line);
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(20,23,28,0.95),
+                    rgba(9,11,14,0.96)
+                );
+            box-shadow:
+                0 25px 70px rgba(0,0,0,0.55),
+                inset 0 1px 0 rgba(255,255,255,0.035);
+            backdrop-filter: blur(16px);
+        }
+
+        .card::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 18%;
+            right: 18%;
+            height: 1px;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(85,170,255,0.55),
+                transparent
+            );
+        }
+
+        .step-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            margin-bottom: 14px;
+            padding: 7px 10px;
+            border-radius: 8px;
+            border: 1px solid rgba(85,170,255,0.16);
+            background: rgba(85,170,255,0.055);
+            color: var(--blue-light);
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 1.3px;
+            text-transform: uppercase;
+        }
+
+        .step-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--blue);
+            box-shadow: 0 0 8px rgba(85,170,255,0.8);
+            animation: dotPulse 1.8s infinite;
+        }
+
+        @keyframes dotPulse {
+            0%, 100% { opacity: .5; }
+            50% { opacity: 1; }
+        }
+
+        h2 {
+            margin: 0 0 10px;
+            font-size: 21px;
+            font-weight: 750;
+            letter-spacing: -0.3px;
+        }
+
+        .card-p {
+            margin: 0 0 22px;
+            color: var(--text);
+            font-size: 14px;
+            line-height: 1.65;
+        }
+
+        /* =========================
+           SECURITY
+        ========================== */
+
+        .warning {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            padding: 14px;
+            margin-bottom: 20px;
+            border-radius: 13px;
+            background: var(--warning-bg);
+            border: 1px solid rgba(240,196,91,0.16);
+        }
+
+        .warning-icon {
+            width: 30px;
+            height: 30px;
+            flex: 0 0 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 9px;
+            background: rgba(240,196,91,0.08);
+            font-size: 15px;
+        }
+
+        .warning-title {
+            margin-bottom: 3px;
+            color: var(--warning);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: .3px;
+        }
+
+        .warning-text {
+            color: #9a8143;
+            font-size: 11px;
+            line-height: 1.5;
+        }
+
+        /* =========================
+           CTA
+        ========================== */
+
+        .btn {
+            width: 100%;
+            min-height: 54px;
+            padding: 15px 18px;
+            border: 0;
+            border-radius: 13px;
+            background: linear-gradient(
+                135deg,
+                #ffffff,
+                #dcefff
+            );
+            color: #071018;
+            font-size: 15px;
+            font-weight: 800;
+            letter-spacing: .2px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition:
+                transform .25s ease,
+                box-shadow .25s ease,
+                filter .25s ease;
+            box-shadow:
+                0 12px 30px rgba(0,0,0,0.3),
+                0 0 0 rgba(85,170,255,0);
+        }
+
+        .btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -120%;
+            width: 70%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255,255,255,0.75),
+                transparent
+            );
+            transform: skewX(-20deg);
+            animation: buttonShine 3.5s infinite;
+        }
+
+        @keyframes buttonShine {
+            0%, 55% {
+                left: -120%;
+            }
+
+            80%, 100% {
+                left: 150%;
+            }
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.06);
+            box-shadow:
+                0 16px 35px rgba(0,0,0,0.38),
+                0 0 28px rgba(85,170,255,0.16);
+        }
+
+        .btn:active {
+            transform: translateY(0) scale(.985);
+        }
+
+        /* =========================
+           COMMUNITY
+        ========================== */
+
+        .community {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .social-btn {
+            min-height: 47px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            text-decoration: none;
+            color: #cfd5dc;
+            background: rgba(255,255,255,0.035);
+            border: 1px solid rgba(255,255,255,0.075);
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 700;
+            transition: .25s ease;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-2px);
+            background: rgba(255,255,255,0.06);
+            border-color: rgba(85,170,255,0.22);
+            color: #fff;
+        }
+
+        .social-icon {
+            font-size: 17px;
+            line-height: 1;
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        .footer {
+            text-align: center;
+            margin-top: 17px;
+            color: var(--muted);
+            font-size: 10px;
+            letter-spacing: .5px;
+        }
+
+        .footer span {
+            color: #87909c;
+        }
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 480px) {
+            body {
+                padding: 22px 13px;
+                align-items: flex-start;
+            }
+
+            .container {
+                margin-top: 12px;
+            }
+
+            .logo-frame {
+                width: 78px;
+                height: 78px;
+                border-radius: 20px;
+            }
+
+            h1 {
+                font-size: 31px;
+            }
+
+            .subtitle {
+                font-size: 13px;
+            }
+
+            .card {
+                padding: 20px;
+                border-radius: 18px;
+            }
+
+            .card-p {
+                font-size: 13px;
+            }
+
+            .community {
+                gap: 8px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .snow,
+            .logo-frame::before,
+            .step-dot,
+            .btn::before {
+                animation: none !important;
+            }
+
+            * {
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Animated Snow Background -->
+    <div class="snow-layer">
+        <span class="snow"></span>
+        <span class="snow"></span>
+        <span class="snow"></span>
+        <span class="snow"></span>
+        <span class="snow"></span>
+        <span class="snow"></span>
+        <span class="snow"></span>
+        <span class="snow"></span>
+        <span class="snow"></span>
+        <span class="snow"></span>
+        <span class="snow"></span>
+        <span class="snow"></span>
+        <span class="snow"></span>
+        <span class="snow"></span>
+        <span class="snow"></span>
+    </div>
+
+    <main class="container">
+
+        <!-- Brand -->
+        <div class="brand">
+
+            <div class="logo-frame">
+                <img src="./assets/logo.png" alt="ECHO GLITCHER">
+            </div>
+
+            <p class="brand-name">ECHO GLITCHER</p>
+
+            <div class="brand-line"></div>
+
+        </div>
+
+        <!-- Heading -->
+        <div class="heading">
+
+            <h1>GET KEY</h1>
+
+            <p class="subtitle">
+                Complete the step below to receive your access key.
+            </p>
+
+        </div>
+
+        <!-- Progress -->
+        <div class="progress-box">
+
+            <div class="progress-top">
+                <span class="progress-label">ACCESS VERIFICATION</span>
+                <span class="progress-count">STEP 1 / 1</span>
+            </div>
+
+            <div class="progress-track">
+                <div class="progress-fill"></div>
+            </div>
+
+        </div>
+
+        <!-- Main Card -->
+        <section class="card">
+
+            <div class="step-tag">
+                <span class="step-dot"></span>
+                Verification Required
+            </div>
+
+            <h2>First Step</h2>
+
+            <p class="card-p">
+                To continue, click the button below to complete the first step.
+                You will be redirected and then return to this page once finished.
+            </p>
+
+            <!-- Security Warning -->
+            <div class="warning">
+
+                <div class="warning-icon">⚠️</div>
+
+                <div>
+                    <div class="warning-title">
+                        Security Notice
+                    </div>
+
+                    <div class="warning-text">
+                        The use of bots or any kind of automation will result in your key being banned.
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Existing Redirect -->
+            <button
+                class="btn"
+                onclick="location.href='https://vplinks.in/AEktQj'">
+                Continue to Step&nbsp; ➜
+            </button>
+
+            <!-- YouTube + Telegram -->
+            <div class="community">
+
+                <a
+                    class="social-btn"
+                    href="https://www.youtube.com/@FaraZPlayz-Z"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    <span class="social-icon">▶</span>
+                    YouTube
+
+                </a>
+
+                <a
+                    class="social-btn"
+                    href="https://t.me/farazplayzzyt"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    <span class="social-icon">✈</span>
+                    Telegram
+
+                </a>
+
+            </div>
+
+        </section>
+
+        <div class="footer">
+            Secure Access System • <span>ECHO GLITCHER</span>
+        </div>
+
+    </main>
+
+</body>
+</html>
